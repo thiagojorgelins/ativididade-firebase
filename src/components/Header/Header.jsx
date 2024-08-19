@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebaseConfig";
 import { signOut } from "firebase/auth";
@@ -26,7 +26,7 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
   return (
     <header>
       <nav className="navbar navbar-start p-4 has-background-dark">
-        <Link to="/home" className="navbar-item is-size-4 has-text-white">
+        <Link to="/" className="navbar-item is-size-4 has-text-white">
           Home
         </Link>
         <Link to="/register" className="navbar-item is-size-4 has-text-white">
@@ -34,12 +34,12 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
         </Link>
         <div className="navbar-end">
           {isLoggedIn ? (
-            <a
+            <button
               className="navbar-item is-size-4 has-text-white"
               onClick={handleLogout}
             >
               Logout
-            </a>
+            </button>
           ) : (
             <Link className="navbar-item is-size-4 has-text-white" to="/login">
               Login

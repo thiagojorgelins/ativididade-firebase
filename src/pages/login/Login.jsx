@@ -20,7 +20,7 @@ function Login({ setIsLoggedIn }) {
 
       setIsLoggedIn(true);
 
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       setErrorMessage(error.message);
     }

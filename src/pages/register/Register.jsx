@@ -19,7 +19,7 @@ function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
       localStorage.setItem("user", JSON.stringify(user));
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       setErrorMessage(error.message);
     }

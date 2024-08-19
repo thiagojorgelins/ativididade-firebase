@@ -18,7 +18,7 @@ function App() {
           element={<Login setIsLoggedIn={setIsLoggedIn} />}
         />
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn}/>} />
       </Routes>
       <Footer />
     </Router>

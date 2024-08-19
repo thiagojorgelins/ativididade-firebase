@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-function Register() {
+function Register({ setIsLoggedIn }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +19,7 @@ function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
       localStorage.setItem("user", JSON.stringify(user));
+      setIsLoggedIn(true);
       navigate("/");
     } catch (error) {
       setErrorMessage(error.message);
